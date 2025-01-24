@@ -1,0 +1,31 @@
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Box shadow */
+    border-spacing: 0; /* Menghilangkan spasi antar border */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Padding lebih besar */
+    text-align: left;
+    transition: background-color 0.3s; /* Transisi untuk hover */
+}
+
+th {
+    background-color: #007bff; /* Warna biru modern */
+    color: white;
+    font-weight: 600; /* Font weight lebih tebal */
+    text-transform: uppercase; /* Huruf kapital pada header */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+</style>
