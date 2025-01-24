@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tampilkan Data CSV</title>
+</head>
+<body>
+
+<script>
+fetch('path/ke/file.csv') // Ganti dengan path ke file CSV di GitHub
+  .then(response => response.text())
+  .then(csvData => {
+    // Proses data CSV (misalnya, split baris dan kolom)
+    const rows = csvData.split('\n');
+    for (const row of rows) {
+      console.log(row.split(',')); // Menampilkan data di konsol
+    }
+
+    // Tampilkan data di tabel HTML (contoh)
+    let table = '<table>';
+    for (const row of rows) {
+        table += '<tr>';
+        const cells = row.split(',');
+        for (const cell of cells){
+            table += '<td>' + cell + '</td>';
+        }
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.body.innerHTML += table;
+  });
+</script>
+
+</body>
+</html>
