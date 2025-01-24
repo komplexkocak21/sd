@@ -1,42 +1,75 @@
 <style>
 body {
-    font-family: sans-serif;
-    background-color: #f8f9fa; /* Latar belakang sedikit abu-abu */
+    font-family: 'Roboto', sans-serif; /* Font modern */
+    background-color: #f4f4f4; /* Latar belakang lebih lembut */
+    display: flex;
+    justify-content: center; /* Tengah horizontal */
+    align-items: center; /* Tengah vertikal */
+    min-height: 100vh; /* Pastikan konten memenuhi tinggi layar */
+    margin: 0; /* Hilangkan margin default body */
 }
 
 #table-container {
-    padding: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Bayangan lebih dalam */
+    overflow-x: auto; /* Scroll horizontal jika tabel terlalu lebar */
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    border-collapse: separate; /* Pisahkan border */
+    border-spacing: 0;
+    border-radius: 12px;
     overflow: hidden;
-
+    table-layout: fixed; /* Mencegah kolom berubah ukuran */
 }
 
 th, td {
-    padding: 12px;
+    padding: 16px;
     text-align: left;
-    border-bottom: 1px solid #dee2e6; /* Garis pemisah antar baris */
+    border-bottom: 1px solid #eee;
     background-color: white;
+    transition: background-color 0.3s ease; /* Transisi halus untuk hover */
+    white-space: nowrap; /* Mencegah teks wrap */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Tampilkan ... jika teks terlalu panjang */
 }
 
 th {
-    background-color: #007bff;
+    background-color: #3498db; /* Warna biru yang lebih modern */
     color: white;
     font-weight: 600;
+    text-transform: uppercase; /* Huruf kapital pada header */
+    letter-spacing: 0.5px; /* Spasi antar huruf */
 }
 
 tr:hover {
-    background-color: #e9ecef; /* Warna latar belakang saat hover */
-    transform: scale(1.01); /* Efek sedikit membesar saat hover */
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 tr:last-child td {
     border-bottom: none;
+}
+
+/* Style untuk scrollbar (opsional) */
+#table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 </style>
